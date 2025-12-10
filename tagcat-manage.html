@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>タグカテゴリー編集 - オフ会タグアプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header-left">
+          <div class="header-title">タグカテゴリー編集</div>
+        </div>
+        <div class="header-center">
+          <input
+            type="checkbox"
+            id="nav-toggle"
+            class="nav-toggle"
+            aria-hidden="true"
+          />
+          <label for="nav-toggle" class="hamburger-label" aria-label="メニュー">
+            <span></span><span></span><span></span>
+          </label>
+          <nav class="nav-menu">
+            <a href="events.html">イベント一覧</a>
+            <a href="mypage.html">マイページ</a>
+            <a href="login.html">ログアウト</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button
+            class="app-icon-button"
+            type="button"
+            aria-label="イベントマイページへ"
+          >
+            <div class="app-icon"></div>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <div class="app-main-inner">
+          <!-- イベント情報 -->
+          <div class="card">
+            <p class="section-title">イベント情報</p>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+              "
+            >
+              <div class="event-icon"></div>
+              <div style="font-size: 14px">
+                <div style="font-weight: 600">つながるスペース in 岡山</div>
+                <div style="font-size: 12px; color: #666">
+                  大規模交流オフ会デモイベント
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 管理人一覧 -->
+          <div class="card">
+            <p class="section-title">カテゴリー</p>
+
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                gap: 12px;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 8px">
+                <div style="font-size: 13px">
+                  <div style="font-weight: 600">スキル</div>
+                </div>
+              </div>
+              <button class="btn btn--outline" type="button">削除</button>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                gap: 12px;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 8px">
+                <div style="font-size: 13px">
+                  <div style="font-weight: 600">属性</div>
+                </div>
+              </div>
+              <button class="btn btn--outline" type="button">削除</button>
+            </div>
+
+                        <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                gap: 12px;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 8px">
+                <div style="font-size: 13px">
+                  <div style="font-weight: 600">一言タグ</div>
+                </div>
+              </div>
+              <button class="btn btn--outline" type="button">削除</button>
+            </div>
+
+            <div style="margin-top: 8px">
+              <button class="btn btn--full" type="button">
+                カテゴリーを追加する
+              </button>
+            </div>
+          </div>
+
+          <div style="height: 72px"></div>
+        </div>
+      </main>
+
+      <div class="footer-actions">
+        <div class="footer-actions-inner">
+<a href="event-manage.html" class="btn btn--outline" style="flex: 1">
+                キャンセル
+</a>
+<a href="event-manage.html" class="btn" style="flex: 1">
+                保存する
+</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
