@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>イベント管理 - オフ会タグアプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header-left">
+          <div class="header-title">イベント管理</div>
+        </div>
+        <div class="header-center">
+          <input
+            type="checkbox"
+            id="nav-toggle"
+            class="nav-toggle"
+            aria-hidden="true"
+          />
+          <label for="nav-toggle" class="hamburger-label" aria-label="メニュー">
+            <span></span><span></span><span></span>
+          </label>
+          <nav class="nav-menu">
+            <a href="events.html">イベント一覧</a>
+            <a href="mypage.html">マイページ</a>
+            <a href="login.html">ログアウト</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button
+            class="app-icon-button"
+            type="button"
+            aria-label="イベントマイページへ"
+          >
+            <div class="app-icon"></div>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <div class="app-main-inner">
+          <!-- イベント情報 -->
+          <div class="card">
+            <p class="section-title">イベント情報</p>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+              "
+            >
+              <div class="event-icon"></div>
+              <div style="font-size: 14px">
+                <div style="font-weight: 600">つながるスペース in 岡山</div>
+                <div style="font-size: 12px; color: #666">
+                  大規模交流オフ会デモイベント
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="event-name">イベント名</label>
+              <input
+                id="event-name"
+                class="form-input"
+                type="text"
+                value="つながるスペース in 岡山"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="event-chat-url">チャットURL</label>
+              <input
+                id="event-chat-url"
+                class="form-input"
+                type="url"
+                placeholder="https://..."
+                value="https://libecity.jp/chat/example"
+              />
+            </div>
+          </div>
+
+          <!-- 管理人一覧 -->
+          <div class="card">
+            <p class="section-title">管理人</p>
+            <div class="section-sub">
+              管理人はイベント情報とタグ設定を編集できます。
+            </div>
+
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                gap: 12px;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 8px">
+                <div class="avatar"></div>
+                <div style="font-size: 13px">
+                  <div style="font-weight: 600">リベ会員 太郎</div>
+                  <div style="font-size: 11px; color: #666">@taro_example</div>
+                </div>
+              </div>
+              <button class="btn btn--outline" type="button">削除</button>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                gap: 12px;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 8px">
+                <div class="avatar"></div>
+                <div style="font-size: 13px">
+                  <div style="font-weight: 600">リベ会員 花子</div>
+                  <div style="font-size: 11px; color: #666">@hanako_example</div>
+                </div>
+              </div>
+              <button class="btn btn--outline" type="button">削除</button>
+            </div>
+
+            <div style="margin-top: 8px">
+              <a href="admin-add.html" class="btn btn--full">管理人を追加する</a>
+            </div>
+          </div>
+
+          <!-- タグ設定 -->
+          <div class="card">
+            <p class="section-title">使用するタグ</p>
+
+            <!-- カテゴリ：スキル -->
+            <div style="margin-bottom: 12px">
+              <p class="section-sub">スキル</p>
+              <div>
+                <span class="tag-toggle tag-toggle--selected">Webデザイン　✕</span>
+                <span class="tag-toggle">動画編集　✕</span>
+                <span class="tag-toggle tag-toggle--selected">AppSheet　✕</span>
+                <span class="tag-toggle">GAS　✕</span>
+                <span class="tag-toggle">＋追加</span>
+              </div>
+            </div>
+
+            <!-- カテゴリ：属性 -->
+            <div style="margin-bottom: 12px">
+              <p class="section-sub">属性</p>
+              <div>
+                <span class="tag-toggle tag-toggle--selected">フリーランス　✕</span>
+                <span class="tag-toggle">副業　✕</span>
+                <span class="tag-toggle">これから独立　✕</span>
+                <span class="tag-toggle">＋追加</span>
+              </div>
+            </div>
+
+            <!-- カテゴリ：一言 -->
+            <div>
+              <p class="section-sub">一言タグ</p>
+              <div>
+                <span class="tag-toggle">初心者歓迎　✕</span>
+                <span class="tag-toggle tag-toggle--selected">がっつり話したい　✕</span>
+                <span class="tag-toggle">ゆるく交流　✕</span>
+                <span class="tag-toggle">＋追加</span>
+              </div>
+            </div>
+            <div>
+                <span class="tag-toggle">＋カテゴリー追加</span>
+            </div>
+          </div>
+
+          <div style="height: 72px"></div>
+        </div>
+      </main>
+
+      <div class="footer-actions">
+        <div class="footer-actions-inner">
+<a href="event-detail.html" class="btn btn--outline" style="flex: 1">
+                キャンセル
+</a>
+<a href="event-detail.html" class="btn" style="flex: 1">
+                保存する
+</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

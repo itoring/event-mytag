@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>管理人追加 - オフ会タグアプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header-left">
+          <div class="header-title">管理人追加</div>
+        </div>
+        <div class="header-center">
+          <input
+            type="checkbox"
+            id="nav-toggle"
+            class="nav-toggle"
+            aria-hidden="true"
+          />
+          <label for="nav-toggle" class="hamburger-label" aria-label="メニュー">
+            <span></span><span></span><span></span>
+          </label>
+          <nav class="nav-menu">
+            <a href="events.html">イベント一覧</a>
+            <a href="mypage.html">マイページ</a>
+            <a href="login.html">ログアウト</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button
+            class="app-icon-button"
+            type="button"
+            aria-label="イベントマイページへ"
+          >
+            <div class="app-icon"></div>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <div class="app-main-inner">
+          <div class="card">
+            <p class="section-title">管理人として追加するメンバー</p>
+            <p class="section-sub">
+              リベシティのプロフィールURLを入力し、「読み込む」を押して確認します。
+            </p>
+
+            <div class="form-group">
+              <label class="form-label" for="admin-profile-url">
+                リベシティ プロフィールURL
+              </label>
+              <input
+                id="admin-profile-url"
+                class="form-input"
+                type="url"
+                placeholder="https://libecity.jp/profile/..."
+              />
+            </div>
+
+            <button class="btn btn--full" type="button">プロフィールを読み込む</button>
+          </div>
+
+          <div class="card">
+            <p class="section-title">確認</p>
+            <p class="section-sub">
+              デモのため、ここでは固定のアカウント情報を表示しています。
+            </p>
+
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+              "
+            >
+              <div class="avatar avatar--lg"></div>
+              <div>
+                <div style="font-weight: 600; font-size: 15px">
+                  リベ会員 新管理人
+                </div>
+                <div style="font-size: 12px; color: #666">
+                  https://libecity.jp/profile/new-admin
+                </div>
+              </div>
+            </div>
+
+<a href="event-detail.html" class="btn btn--full" style="flex: 1">
+              管理人として追加する
+</a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

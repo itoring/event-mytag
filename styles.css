@@ -1,0 +1,412 @@
+/* =========================
+   Base
+   ========================= */
+:root {
+  --color-bg: #ffffff;
+  --color-primary: #4fc3f7;      /* ベースの水色 */
+  --color-primary-soft: #e1f5fe;
+  --color-accent: #ffb74d;       /* アクセントのオレンジ */
+  --color-border: #dddddd;
+  --color-text: #333333;
+  --color-muted: #888888;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 999px;
+  --header-height: 56px;
+  --footer-height: 64px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding: calc(var(--header-height) + var(--space-md)) var(--space-lg)
+    var(--space-lg);
+}
+
+/* スマホ前提の幅調整（PCでも中央寄せで違和感を減らす） */
+.app-main-inner {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Header / Navigation
+   ========================= */
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+}
+
+.header-left {
+  min-width: 0;
+}
+
+.header-title {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* リベアイコン（仮の丸アイコン） */
+.app-icon-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.app-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #ffffff, #0288d1);
+  border: 2px solid var(--color-primary);
+}
+
+/* ハンバーガーメニュー（中央） */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger-label {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.hamburger-label span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  margin: 2px 0;
+  background-color: var(--color-text);
+  border-radius: 999px;
+}
+
+/* ドロップダウン風ナビ */
+.nav-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: var(--space-sm) 0;
+  display: none;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.nav-menu a:hover {
+  background-color: var(--color-primary-soft);
+}
+
+/* チェックで開閉 */
+.nav-toggle:checked ~ .nav-menu {
+  display: block;
+}
+
+/* =========================
+   Buttons / Chips
+   ========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn--outline {
+  background-color: #ffffff;
+  color: var(--color-primary);
+}
+
+.btn--ghost {
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+.btn + .btn {
+  margin-left: var(--space-sm);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: #ffffff;
+  font-size: 12px;
+  margin: 0 6px 6px 0;
+}
+
+.chip--active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+/* タグのトグルボタン */
+.tag-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background-color: #ffffff;
+  font-size: 13px;
+  margin: 0 8px 8px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tag-toggle--selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* =========================
+   Cards / Sections
+   ========================= */
+
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  background-color: #ffffff;
+}
+
+.card + .card {
+  margin-top: var(--space-md);
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 var(--space-sm);
+}
+
+.section-sub {
+  font-size: 12px;
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* =========================
+   Forms
+   ========================= */
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.form-input {
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* =========================
+   Avatars / Icons
+   ========================= */
+
+.avatar,
+.event-icon {
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-soft), #ffffff);
+  border: 2px solid var(--color-primary);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+}
+
+.avatar--lg {
+  width: 72px;
+  height: 72px;
+}
+
+.event-icon {
+  width: 56px;
+  height: 56px;
+}
+
+/* =========================
+   Lists / Grids
+   ========================= */
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.event-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.event-list-item-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* スマホ5列 */
+  gap: 10px;
+  margin-top: var(--space-md);
+}
+
+.avatar-grid-item {
+  display: flex;
+  justify-content: center;
+}
+
+/* PC向けに少し調整 */
+@media (min-width: 768px) {
+  .app-main-inner {
+    max-width: 640px;
+  }
+}
+
+/* =========================
+   Fixed Footer Actions
+   ========================= */
+
+.footer-actions {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--footer-height);
+  border-top: 1px solid var(--color-border);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-lg);
+  gap: var(--space-sm);
+  z-index: 90;
+}
+
+.footer-actions-inner {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.footer-actions .btn {
+  flex: 1;
+}

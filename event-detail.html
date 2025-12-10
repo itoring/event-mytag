@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>イベント詳細 - オフ会タグアプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header-left">
+          <div class="header-title">イベント詳細</div>
+        </div>
+        <div class="header-center">
+          <input
+            type="checkbox"
+            id="nav-toggle"
+            class="nav-toggle"
+            aria-hidden="true"
+          />
+          <label for="nav-toggle" class="hamburger-label" aria-label="メニュー">
+            <span></span><span></span><span></span>
+          </label>
+          <nav class="nav-menu">
+            <a href="events.html">イベント一覧</a>
+            <a href="mypage.html">マイページ</a>
+            <a href="login.html">ログアウト</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button
+            class="app-icon-button"
+            type="button"
+            aria-label="イベントマイページへ"
+          >
+            <div class="app-icon"></div>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <div class="app-main-inner">
+          <div class="card">
+            <!-- ① イベントアイコンとイベント名 -->
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 16px;
+              "
+            >
+              <div class="event-icon"></div>
+              <div>
+                <div style="font-weight: 600; font-size: 16px">
+                  つながるスペース in 岡山
+                </div>
+                <div style="font-size: 12px; color: #666">
+                  大規模交流オフ会デモイベント
+                </div>
+              </div>
+            </div>
+
+            <!-- 管理人用ボタン（デモでは常に表示） -->
+            <div style="margin-top: 20px">
+              <a href="event-manage.html" class="btn btn--outline btn--full">
+                イベント管理画面へ
+              </a>
+            </div>
+
+            <!-- ② 自分のタグを編集ボタン -->
+            <div style="margin-top: 20px; margin-bottom: 16px">
+              <a href="mytags.html" class="btn btn--full">自分のタグを編集する</a>
+            </div>
+
+            <!-- ③ 現在の絞り込みタグ -->
+            <div style="margin-bottom: 8px">
+              <p class="section-title">現在の絞り込み条件</p>
+              <p class="section-sub">
+                一度設定した条件は、このイベントページに再アクセスしたときも適用されます。
+              </p>
+              <div>
+                <span class="chip chip--active">Webデザイン</span>
+                <span class="chip chip--active">AppSheet</span>
+                <span class="chip">初心者歓迎</span>
+              </div>
+            </div>
+
+            <!-- ④ 絞り込みボタン -->
+            <div
+              style="
+                display: flex;
+                gap: 8px;
+                margin: 8px 0 12px;
+                flex-wrap: wrap;
+              "
+            >
+              <a href="filter-tags.html" class="btn btn--outline" style="flex: 1">
+                絞り込み条件を編集
+              </a>
+              <button class="btn btn--ghost" type="button" style="flex: 1">
+                自分と同じタグで絞り込む
+              </button>
+            </div>
+
+            <!-- ⑤ アカウント一覧（アイコンのみ） -->
+            <p class="section-title" style="margin-top: 12px">
+              該当する参加者
+            </p>
+
+            <div class="avatar-grid">
+              <!-- 参加者アイコン（タップでリベプロフへ遷移する想定） -->
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+              <a href="#" class="avatar-grid-item">
+                <div class="avatar"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

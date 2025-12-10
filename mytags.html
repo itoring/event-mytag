@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>マイタグ編集 - オフ会タグアプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="header-left">
+          <div class="header-title">マイタグ編集</div>
+        </div>
+        <div class="header-center">
+          <input
+            type="checkbox"
+            id="nav-toggle"
+            class="nav-toggle"
+            aria-hidden="true"
+          />
+          <label for="nav-toggle" class="hamburger-label" aria-label="メニュー">
+            <span></span><span></span><span></span>
+          </label>
+          <nav class="nav-menu">
+            <a href="events.html">イベント一覧</a>
+            <a href="mypage.html">マイページ</a>
+            <a href="login.html">ログアウト</a>
+          </nav>
+        </div>
+        <div class="header-right">
+          <button
+            class="app-icon-button"
+            type="button"
+            aria-label="イベントマイページへ"
+          >
+            <div class="app-icon"></div>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <div class="app-main-inner">
+          <div class="card">
+            <p class="section-title">このイベントで使う自分のタグ</p>
+            <p class="section-sub">
+              各カテゴリから最低1つ以上選択してください。（デモのため動作はダミーです）
+            </p>
+
+            <!-- スキルカテゴリ -->
+            <div style="margin-bottom: 16px">
+              <p class="section-sub">スキル</p>
+              <div>
+                <span class="tag-toggle tag-toggle--selected">Webデザイン</span>
+                <span class="tag-toggle">動画編集</span>
+                <span class="tag-toggle tag-toggle--selected">AppSheet</span>
+                <span class="tag-toggle">GAS</span>
+              </div>
+            </div>
+
+            <!-- 属性カテゴリ -->
+            <div style="margin-bottom: 16px">
+              <p class="section-sub">属性</p>
+              <div>
+                <span class="tag-toggle tag-toggle--selected">副業</span>
+                <span class="tag-toggle">フリーランス</span>
+                <span class="tag-toggle">これから独立</span>
+              </div>
+            </div>
+
+            <!-- 一言カテゴリ -->
+            <div>
+              <p class="section-sub">一言タグ</p>
+              <div>
+                <span class="tag-toggle tag-toggle--selected">初心者歓迎</span>
+                <span class="tag-toggle">がっつり話したい</span>
+                <span class="tag-toggle">ゆるく交流</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 72px"></div>
+        </div>
+      </main>
+
+      <div class="footer-actions">
+        <div class="footer-actions-inner">
+            <a href="event-detail.html" class="btn btn--outline" style="flex: 1">
+                            キャンセル
+            </a>
+            <a href="event-detail.html" class="btn" style="flex: 1">
+                            タグを保存
+            </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
