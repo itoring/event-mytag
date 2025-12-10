@@ -337,7 +337,14 @@ body {
   width: 56px;
   height: 56px;
 }
-
+.avatar img,
+.event-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 画像が枠いっぱいに収まる */
+  border-radius: 50%;  /* 正円に切り抜く */
+  display: block;
+}
 /* =========================
    Lists / Grids
    ========================= */
