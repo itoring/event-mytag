@@ -1,0 +1,11 @@
+public_html/sub.example.com/
+├─ app/
+│  ├─ config/
+│  │  └─ db.php
+│  ├─ lib/
+│  │  └─ auth.php
+│  └─ .htaccess
+├─ assets/
+│  ├─ css/
+│  └─ js/
+└─ .htaccess

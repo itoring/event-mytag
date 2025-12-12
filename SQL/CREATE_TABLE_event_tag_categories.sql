@@ -1,0 +1,9 @@
+CREATE TABLE event_tag_categories (
+    category_id        INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    event_id           INT UNSIGNED NOT NULL,
+    category_name      VARCHAR(255) NOT NULL,
+    sort_order         INT UNSIGNED DEFAULT 0,
+    updated_at         DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at         DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (event_id) REFERENCES events(event_id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

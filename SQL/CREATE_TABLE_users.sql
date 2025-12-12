@@ -1,0 +1,8 @@
+CREATE TABLE users (
+    user_id            INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    icon_url           VARCHAR(512),
+    profile_url        VARCHAR(512) NOT NULL UNIQUE,
+    ribe_name          VARCHAR(255),
+    updated_at         DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_at         DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
